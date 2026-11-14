@@ -1,0 +1,5 @@
+# Supabase configuration for LearnMate project
+project_id = "learnmate"
+
+[functions.ai-doubt-solver]
+verify_jwt = true

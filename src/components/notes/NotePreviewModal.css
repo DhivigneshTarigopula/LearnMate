@@ -1,0 +1,339 @@
+/* Note Preview Modal Styles */
+.note-preview-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  animation: previewFadeIn 0.2s ease-out;
+}
+
+@keyframes previewFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.note-preview-dialog {
+  background: #FFFFFF;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 1050px;
+  height: 90vh;
+  max-height: 850px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
+  border: 1px solid rgba(225, 231, 223, 0.9);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fullscreen-mode .note-preview-dialog {
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+  border: none;
+}
+
+.btn-ai-preview {
+  background: var(--primary-purple) !important;
+  color: #FFFFFF !important;
+  border-color: var(--primary-purple) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.btn-ai-preview:hover {
+  background: #6455C6 !important;
+}
+
+/* Header */
+.note-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.note-preview-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.note-type-badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EDF2F0;
+  flex-shrink: 0;
+}
+
+.badge-pdf-icon {
+  color: #DC2626;
+}
+
+.badge-img-icon {
+  color: var(--primary);
+}
+
+.note-preview-title-wrap {
+  min-width: 0;
+}
+
+.note-preview-filename {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.2rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+}
+
+.note-preview-submeta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.meta-badge-ext {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.meta-subject,
+.meta-module,
+.meta-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Controls */
+.note-preview-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image-control-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  padding: 0.25rem 0.5rem;
+}
+
+.control-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.control-icon-btn:hover {
+  background: #FFFFFF;
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.zoom-percentage {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  min-width: 38px;
+  text-align: center;
+  user-select: none;
+}
+
+.preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.preview-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.preview-close-btn:hover {
+  background: #F1F5F9;
+  color: var(--text-main);
+}
+
+/* Body */
+.note-preview-body {
+  flex: 1;
+  background: #0F172A;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-loading-state,
+.preview-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #E2E8F0;
+  text-align: center;
+}
+
+.preview-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--primary-accent);
+  border-radius: 50%;
+  animation: previewSpin 0.75s linear infinite;
+}
+
+@keyframes previewSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preview-error-state h4 {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.preview-error-state p {
+  color: #94A3B8;
+  max-width: 360px;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* PDF iframe */
+.pdf-viewer-frame-container {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+}
+
+.pdf-viewer-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Image stage */
+.image-viewer-stage {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.image-viewer-wrapper {
+  display: inline-block;
+  transform-origin: center center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.image-preview-element {
+  display: block;
+  max-width: 100%;
+  max-height: calc(85vh - 120px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.fullscreen-mode .image-preview-element {
+  max-height: calc(100vh - 100px);
+}
+
+.note-preview-footer-note {
+  padding: 0.75rem 1.5rem;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .note-preview-backdrop {
+    padding: 0;
+  }
+  .note-preview-dialog {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .note-preview-header {
+    padding: 0.75rem 1rem;
+  }
+  .btn-label-text {
+    display: none;
+  }
+  .note-preview-filename {
+    max-width: 220px;
+  }
+}

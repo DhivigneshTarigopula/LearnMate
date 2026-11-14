@@ -1,0 +1,30 @@
+/* AI Assignment Upload Modal Styles */
+.ai-asg-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.asg-cloud-circle {
+  background: var(--light-teal);
+  color: var(--primary);
+}
+
+.ai-asg-preview-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
