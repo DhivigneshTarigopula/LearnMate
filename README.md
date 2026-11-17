@@ -38,12 +38,6 @@ Course: AI Full Stack Development
 
 Project: LearnMate – Study Workspace for University Students
 
-👥 Team Members
-
-- Sunidhi MP
-- T Dhivignesh
-- Shivashankar
-
 🚀 Future Improvements
 
 - AI-powered study recommendations.
